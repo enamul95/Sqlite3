@@ -37,7 +37,9 @@ angular.module('starter', ['ionic','ngCordova'])
 	 //alert(db);
 	    $cordovaSQLite.execute(db, query, []).then(function(res) {
             if(res.rows.length > 0) {
+            		 alert("row length");
                 for(var i = 0; i < res.rows.length; i++) {
+                	 alert("for loop");
                     //console.log("SELECTED -> " + res.rows.item(i).firstname + " " + res.rows.item(i).lastname);
 					alert("SELECTED -> " + res.rows.item(i).firstname + " " + res.rows.item(i).lastname);
                 }
@@ -82,10 +84,14 @@ angular.module('starter', ['ionic','ngCordova'])
 
 	 //db = $cordovaSQLite.openDB("resources/populated.db");
 	 window.plugins.sqlDB.copy("populated.db", function() {
+	 	 alert("db success upone");
             db = $cordovaSQLite.openDB("populated.db");
+            alert("db success under"+db);
         }, function(error) {
+        	 alert("db error);
             console.error("There was an error copying the database: " + error);
             db = $cordovaSQLite.openDB("populated.db");
+             alert("db error under"+db);
         });
 	
 	 });
