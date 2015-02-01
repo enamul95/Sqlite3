@@ -34,7 +34,7 @@ angular.module('starter', ['ionic','ngCordova'])
 	$scope.DoSubmitAction=function(sq){
 	alert("Get all data");
 	  var query = "SELECT firstname, lastname FROM people";
-	 //alert(db);
+	 alert(db);
 	    $cordovaSQLite.execute(db, query, []).then(function(res) {
             if(res.rows.length > 0) {
             		 alert("row length");
@@ -81,17 +81,19 @@ angular.module('starter', ['ionic','ngCordova'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    
+    db = $cordovaSQLite.openDB("populated.db");
 
 	 //db = $cordovaSQLite.openDB("resources/populated.db");
 	 window.plugins.sqlDB.copy("populated.db", function() {
-	 	 alert("db success upone");
+	 	// alert("db success upone");
             db = $cordovaSQLite.openDB("populated.db");
-            alert("db success under"+db);
+            //alert("db success under"+db);
         }, function(error) {
-        	 alert("db error");
+        	// alert("db error");
             console.error("There was an error copying the database: " + error);
             db = $cordovaSQLite.openDB("populated.db");
-             alert("db error under"+db);
+             //alert("db error under"+db);
         });
 	
 	 });
