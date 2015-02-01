@@ -82,7 +82,7 @@ angular.module('starter', ['ionic','ngCordova'])
       StatusBar.styleDefault();
     }
     
-    db = $cordovaSQLite.openDB("populated.db");
+    //db = $cordovaSQLite.openDB("populated.db");
 
 	 //db = $cordovaSQLite.openDB("resources/populated.db");
 	 window.plugins.sqlDB.copy("platforms/android/assets/populated.db", function() {
