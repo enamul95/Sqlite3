@@ -88,7 +88,7 @@ angular.module('starter', ['ionic','ngCordova'])
             db = $cordovaSQLite.openDB("populated.db");
             alert("db success under"+db);
         }, function(error) {
-        	 alert("db error);
+        	 alert("db error");
             console.error("There was an error copying the database: " + error);
             db = $cordovaSQLite.openDB("populated.db");
              alert("db error under"+db);
